@@ -19,11 +19,11 @@ var reducer = (state = stateDefaul, action) => {
   }
 };
 var store = redux.createStore(reducer, redux.compose(
-  window.devToolsExtension ? window.devToolsExtension() : f => f
+  // window.devToolsExtension ? window.devToolsExtension() : f => f
 ));
 
 // Subscribe to changes
-store.subscribe(() => {
+var subscribe = store.subscribe(() => {
   var state = store.getState();
 
   document.getElementById('app').innerHTML = state.searchText;
